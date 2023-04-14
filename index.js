@@ -497,13 +497,13 @@
 
 // // testElse(4);
 // // function testElseIf(val) {
-  // if (val > 10) {
-  //   return "Greater than 10";
-  // } else if (val < 5) {
-  //   return "Smaller than 5";
-  // } else {
-  //   return "Between 5 and 10";
-  // }
+// if (val > 10) {
+//   return "Greater than 10";
+// } else if (val < 5) {
+//   return "Smaller than 5";
+// } else {
+//   return "Between 5 and 10";
+// }
 // // }
 
 // // testElseIf(7);
@@ -616,23 +616,23 @@
 // switchOfStuff(1);
 
 // function sequentialSizes(val) {
-  // let answer = "";
-  // switch (val) {
-  //   case 1:
-  //   case 2:
-  //   case 3:
-  //     answer = "Low";
-  //     break;
-  //   case 4:
-  //   case 5:
-  //   case 6:
-  //     answer = "Mid";
-  //     break;
-  //   case 7:
-  //   case 8:
-  //   case 9:
-  //     answer = "High";
-  //     break;
+// let answer = "";
+// switch (val) {
+//   case 1:
+//   case 2:
+//   case 3:
+//     answer = "Low";
+//     break;
+//   case 4:
+//   case 5:
+//   case 6:
+//     answer = "Mid";
+//     break;
+//   case 7:
+//   case 8:
+//   case 9:
+//     answer = "High";
+//     break;
 //   }
 
 //   // Only change code above this line
@@ -669,28 +669,49 @@
 // chainToSwitch(7);
 
 function reverseWords(str) {
-  return str.split('').reverse().join('');
+  return str.split("").reverse().join("");
 }
 
 console.log(reverseWords("The quick brown fox jumps over the lazy dog."));
 
-function greet(name){
-  return `Hello, ${name} how are you doing today?`
+function greet(name) {
+  return `Hello, ${name} how are you doing today?`;
 }
 
-function getGrade (s1, s2, s3) {
+function getGrade(s1, s2, s3) {
   debugger;
-  const sum = (s1+s2+s3)/3;
-if (90 <= sum  && sum <=100 ) {
-  return "A";   
-}else if (80 <= sum  && sum < 90 ) {
-return "B";
-}else if (70 <= sum  && sum < 80 ) {
-return "C";
-}else if (60 <= sum  && sum < 70 ) {
-return "D";
-}else  (0 <= sum  && sum < 60 ) 
-return "F";
-
+  const sum = (s1 + s2 + s3) / 3;
+  if (90 <= sum && sum <= 100) {
+    return "A";
+  } else if (80 <= sum && sum < 90) {
+    return "B";
+  } else if (70 <= sum && sum < 80) {
+    return "C";
+  } else if (60 <= sum && sum < 70) {
+    return "D";
+  } else 0 <= sum && sum < 60;
+  return "F";
 }
-console.log(getGrade(70,70,50));
+console.log(getGrade(70, 70, 50));
+function isLess(a, b) {
+  // Only change code below this lin
+  return a < b;
+
+  // Only change code above this line
+}
+isLess(10, 15);
+
+// Setup
+function abTest(a, b) {
+  // Only change code below this line
+
+  if (a < 0 || b < 0) {
+    return undefined;
+  }
+
+  // Only change code above this line
+
+  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
+
+abTest(2, 2);
