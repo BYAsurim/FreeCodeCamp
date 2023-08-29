@@ -98,14 +98,14 @@ const myStr23 = "FirstLine\n\t\\SecondLine\nThirdLine"; // Change this line
 const myStr7 = "This is the start. " + "This is the end."; // Change this line
 
 let myStr8 = "This is the first sentence. ";
-myStr += "This is the second sentence.";
+myStr8 += "This is the second sentence.";
 
 const myName = "Alex";
 const myStr4 = "My name is " + myName + "and I am well!";
 
 const someAdjective = "alex";
 let myStr12 = "Learning to code is ";
-myStr += someAdjective;
+myStr12 += someAdjective;
 
 Setup;
 let lastNameLength = 0;
@@ -502,7 +502,6 @@ function testSize(num) {
       return names[6];
     }
 
-    // Only change code above this line
   }
   console.log(golfScore(4, 1));
   console.log(golfScore(4, 2));
@@ -784,7 +783,7 @@ function testSize(num) {
   }
   console.log(removeExclamationMarks("hello world!"));
   console.log(removeExclamationMarks("hello world"));
-  const removeExclamationMarks = (s) => s.replace(/\!/g, "");
+  const removeExclamationMarks1 = (s) => s.replace(/\!/g, "");
   function checkObj(obj, checkProp) {
     if (obj.hasOwnProperty(checkProp)) {
       return obj[checkProp];
@@ -919,3 +918,220 @@ function testSize(num) {
     }
   }
 }
+const fullAge = 29;
+const birthDay = 1993;
+const currentYear = 2023;
+
+const isFullAge = currentYear - birthDay >= fullAge;
+console.log(isFullAge);
+
+console.log(0.4 + 0.2)
+console.log((0.4 + 0.2).toFixed(1))
+console.log(parseFloat((0.4 + 0.2).toFixed(1)))
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(typeof(9007199254740991999n))
+console.log(parseInt(10n) - 4)
+console.log(Math.pow(5,4))
+console.log(Math.max(1, 3, 5, 6, 10))
+console.log(Math.min(1, 3, 5, 6, 10))
+console.log(Math.floor(4.5))
+console.log(Math.ceil(4.5))
+console.log(Math.round(4.4))
+function getRandom  (min, max) {
+return Math.floor((Math.random() * (max - min + 1) + min));
+}
+console.log (getRandom(10, 50))
+const name = 'Alex';
+const age = 29;
+const outPut = `Привет меня зовут ${name} и мой возраст ${age > 29 ? 'A' : 'B'} лет!`
+console.log(outPut)
+const myName = 'Alex';
+console.log(myName.length)
+console.log(myName.toUpperCase())
+console.log(myName.toLowerCase())
+console.log(myName.indexOf('ex'))
+
+function great(name){
+  console.log('меня зовут -',  name);
+}
+great('Alex');
+
+const arrow = (name) => {
+  console.log('меня зовут -',  name);
+}
+arrow('Маша')
+
+const arrow2 = (myName) => console.log('меня зовут -',  myName);
+arrow2('Sasha');
+
+const pow2 = num => console.log(num ** 2);
+pow2(6);
+
+const myFunc = (x,y) => x > y ? console.log('x больше y') : console.log('у больше х')
+myFunc(3,5);
+
+function sumAll(...all){
+  let result = 0
+  for(let num of all){
+    result += num
+  }
+  return result
+}
+console.log(sumAll(1,2,3,7,5,8,6,0,6,7,3,6))
+
+function createMember(name){
+  return function(lastName){
+    console.log(name + lastName)
+  }
+}
+
+const logWithLastName = createMember('Alex');
+console.log(logWithLastName('Nikolaevich'));
+
+const cars = ['мазда', 'мерседес','бмв','ферари'];
+cars.push('рено')
+const people = [
+  {name: 'Alex', budget: 3500},
+  {name: 'Elena', budget: 2900},
+  {name: 'Anatoliy', budget: 2400}
+]
+
+console.log(cars);
+const firstItem =  cars.shift();
+console.log(cars);
+console.log(firstItem);
+const text = 'Привет мы изучаем Javascript'
+const reversText = text.split('').reverse().join('')
+console.log(reversText)
+const index = cars.indexOf('бмв')
+cars[index] = 'Porsche'
+console.log(cars)
+const index = people.findIndex(person => person.budget === 2400)
+const person = people.find(person => person.budget === 3500)
+let findPerson
+for(let person of people){
+  //console.log(person)
+  if(person.budget === 3500){
+   findPerson = people;
+  }
+}
+console.log(findPerson)
+
+console.log(person)
+console.log(index)
+
+const cars = ['мазда', 'мерседес','бмв','ферари'];
+const upperCaseCars = cars.map(car => car.toUpperCase());
+console.log(upperCaseCars);
+const arr = [1,2,3,7,5,8,6,0,6,7,3,6];
+const  pow2 = num => num **2
+const pow3 = num => Math.sqrt(num)
+const pow = arr.map(pow2).map(pow3);
+console.log(pow);
+
+const arr = [1,2,3,7,5,8,6,0,6,7,3,6]
+const  pow2 = num => num **2
+const pow = arr.map(pow2);
+const pow3 = pow.filter(num => num % 2 == 0 )
+console.log(pow)
+console.log(pow3)
+
+const people = [
+  { name: "Alex", budget: 3500 },
+  { name: "Elena", budget: 2900 },
+  { name: "Anatoliy", budget: 2400 },
+];
+
+const sum = people
+  .filter((person) => person.budget > 2500)
+  .reduce((acc, person) => {
+    acc += person.budget;
+    return acc;
+  }, 0);
+console.log(sum);
+
+const  person = {
+  name: 'Alex',
+  age: 29,
+  language: ['ru', 'en'],
+  'comlex key': 'comlex value',
+  ['key_' + (1+3)]: 'Computed key',
+  greet() {
+    console.log('some text')
+  },
+  info(){
+
+    console.info(this)
+    console.info('information aboyt:', this.name)
+  }
+}
+
+console.log(person.name)
+console.log(person['age'])
+console.log(person['comlex key'])
+person.greet()
+person.language.push('by')
+// person['key_4'] = undefined
+delete person['key_4']
+console.log(person)
+const {name, age, language} = person
+console.log(name, age, language)
+for(let key in person){
+  if(person.hasOwnProperty(key)){
+    console.log(key)
+    console.log(person[key])
+  }
+}
+const keys = Object.keys(person)
+keys.forEach((key) =>{
+  console.log(key)
+  console.log(person[key])
+})
+person.info()
+const logger = {
+  keys(){
+    console.log('Object Keys: ', Object.keys(this))
+  }
+}
+const baunt = logger.keys.bind(person)
+baunt();
+  logger.keys.call(person)
+
+const timeout = setTimeout(() => {
+console.log('After timout')
+}, 2500)
+clearTimeout(timeout)
+
+const interval = setInterval(() => {
+  console.log('After timout')
+}, 1000)
+clearTimeout(timeout)
+
+const  delay = (wait=1000) =>{
+ const promise =  new Promise((resolve, reject) => {
+    setTimeout(() => {
+     resolve()
+      // reject('Что то пошло не так ')
+    }, wait)
+  })
+  return promise
+}
+delay(2500)
+.then(() =>{
+  console.log('After two seconds')
+})
+.catch(err => {console.error(('Error: ' ,err))})
+.finally(() => console.log('Finally'))
+
+const getData = () => new Promise(resolve => resolve([
+    1, 1, 2, 3, 5, 8, 13
+]))
+getData().then(data => console.log(data))
+async function asyncExample() {
+  await delay(3000)
+  const  data = await getData()
+console.log('Data', data)
+}
+asyncExample()
+
+
