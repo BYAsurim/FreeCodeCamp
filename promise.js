@@ -98,3 +98,73 @@ let makeRequestOneMoment = async () => {
 makeRequestOneMoment()
 
 //fetch('xz').then(data => console.error(data))}
+
+
+let myPromise = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        resolve('my promise resolve')
+    },0)
+
+console.log('1')
+console.log('2')
+console.log('3')
+})
+console.log(myPromise)
+
+myPromise.then((res)=>{
+    console.log(res)
+})
+myPromise.then((res)=>{
+    console.log(`123: ${res}`)
+})
+const doAfter = (sec)=>{
+    return  new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            const number = Math.random()
+            number > 0.35 ? resolve(number) : reject(`Promise reject ${number}`)
+        },Number(`${sec}000`))
+
+    })}
+
+
+const doAfterResolve = (sec)=>{
+    return  new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            resolve()
+        },Number(`${sec}000`))
+
+    })}
+
+doAfterResolve(5).then(()=>{
+    console.log('5 секунд ')
+})
+
+const doAfterReject = (sec)=>{
+    return  new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            reject()
+        },Number(`${sec}000`))
+
+    })}
+
+let prRej = doAfterReject(3)
+prRej.catch(()=>{
+    console.error('reject')
+})
+
+doAfter(5)
+    .then((res)=>{
+    console.log(res)
+})
+.catch((rej)=>{
+    console.error(rej)
+})
+
+doAfter(5)
+    .then((res)=>{
+        console.log(`random NUMBER${res}`)
+        return res * 10
+    })
+    .then(res => doAfter(3))
+    .then(res => res * 10 )
+    .then(res => console.log(`randomLAST${res}`))
