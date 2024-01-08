@@ -38,3 +38,56 @@ function reverseWords(str) {
 }
 
 console.log(reverseWords('Hello World'));
+
+function isPrime(number) {
+    if (number <= 1) {
+        return false;
+    }
+
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+console.log(isPrime(7));
+
+function removeDuplicates(arr) {
+    return [...new Set(arr)];
+}
+
+console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5]));
+
+function reverseString(str) {
+    return str.split('').reverse().join('');
+}
+
+console.log(reverseString('Hello'));
+
+function factorial(number) {
+    if (number === 0 || number === 1) {
+        return 1;
+    }
+
+    let result = 1;
+
+    for (let i = 2; i <= number; i++) {
+        result *= i;
+    }
+
+    return result;
+}
+
+console.log(factorial(5));
+
+function isAnagram(str1, str2) {
+    const sortedStr1 = str1.split('').sort().join('');
+    const sortedStr2 = str2.split('').sort().join('');
+
+    return sortedStr1 === sortedStr2;
+}
+
+console.log(isAnagram('listen', 'silent'))
