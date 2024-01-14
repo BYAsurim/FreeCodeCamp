@@ -91,3 +91,43 @@ function isAnagram(str1, str2) {
 }
 
 console.log(isAnagram('listen', 'silent'))
+function isEven(number) {
+    return number % 2 === 0;
+}
+
+console.log(isEven(4));
+console.log(isEven(7));
+function findMaxValue(array) {
+    return Math.max(...array);
+}
+
+console.log(findMaxValue([3, 8, 2, 6, 1]));
+
+function calculateSum(array) {
+    return array.reduce((sum, num) => sum + num, 0);
+}
+
+console.log(calculateSum([1, 2, 3, 4, 5]));
+
+function isPalindrome(str) {
+    const reversed = str.split('').reverse().join('');
+    return str === reversed;
+}
+
+console.log(isPalindrome('racecar'));
+console.log(isPalindrome('hello'));
+
+function factorial(number) {
+    if (number === 0 || number === 1) {
+        return 1;
+    }
+
+    let result = 1;
+    for (let i = 2; i <= number; i++) {
+        result *= i;
+    }
+
+    return result;
+}
+
+console.log(factorial(5));
