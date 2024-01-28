@@ -131,3 +131,59 @@ function factorial(number) {
 }
 
 console.log(factorial(5));
+
+let numbers = [1, 2, 3, 4, 5];
+let sum = 0;
+
+for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+}
+
+console.log(sum);
+
+let numbers = [10, 5, 8, 3, 15];
+let maxNumber = numbers[0];
+
+for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] > maxNumber) {
+        maxNumber = numbers[i];
+    }
+}
+
+console.log(maxNumber);
+
+let fruits = ['apple', 'banana', 'orange', 'grape'];
+let searchItem = 'orange';
+let found = false;
+
+for (let i = 0; i < fruits.length; i++) {
+    if (fruits[i] === searchItem) {
+        found = true;
+        break;
+    }
+}
+
+console.log(found);
+
+let str = 'Hello, world!';
+let reversedStr = '';
+
+for (let i = str.length - 1; i >= 0; i--) {
+    reversedStr += str[i];
+}
+
+console.log(reversedStr);
+
+let str = 'JavaScript is awesome';
+let vowelCount = 0;
+let vowels = ['a', 'e', 'i', 'o', 'u'];
+
+str = str.toLowerCase();
+
+for (let i = 0; i < str.length; i++) {
+    if (vowels.includes(str[i])) {
+        vowelCount++;
+    }
+}
+
+console.log(vowelCount);
