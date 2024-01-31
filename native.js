@@ -187,3 +187,54 @@ for (let i = 0; i < str.length; i++) {
 }
 
 console.log(vowelCount);
+
+let numbers = [1, 2, 3, 4, 5, 1, 2, 3];
+let uniqueValues = [];
+
+for (let i = 0; i < numbers.length; i++) {
+    if (!uniqueValues.includes(numbers[i])) {
+        uniqueValues.push(numbers[i]);
+    }
+}
+
+console.log(uniqueValues);
+
+let numbers = [1, 2, 3, 4, 5];
+let sum = 0;
+
+for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+}
+
+let average = sum / numbers.length;
+
+console.log(average);
+
+let str = 'level';
+let reversedStr = '';
+
+for (let i = str.length - 1; i >= 0; i--) {
+    reversedStr += str[i];
+}
+
+let isPalindrome = str === reversedStr;
+
+console.log(isPalindrome);
+
+let sentence = 'JavaScript is a programming language';
+let words = sentence.split(' ');
+let wordCount = words.length;
+
+console.log(wordCount);
+
+let sentence = 'JavaScript is an amazing programming language';
+let words = sentence.split(' ');
+let longestWord = '';
+
+for (let i = 0; i < words.length; i++) {
+    if (words[i].length > longestWord.length) {
+        longestWord = words[i];
+    }
+}
+
+console.log(longestWord);
