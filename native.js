@@ -19,6 +19,7 @@ function isPalindrome(str) {
 }
 
 console.log(isPalindrome('racecar'));
+
 function sumArray(arr) {
     return arr.reduce((acc, curr) => acc + curr, 0);
 }
@@ -91,12 +92,14 @@ function isAnagram(str1, str2) {
 }
 
 console.log(isAnagram('listen', 'silent'))
+
 function isEven(number) {
     return number % 2 === 0;
 }
 
 console.log(isEven(4));
 console.log(isEven(7));
+
 function findMaxValue(array) {
     return Math.max(...array);
 }
@@ -238,3 +241,71 @@ for (let i = 0; i < words.length; i++) {
 }
 
 console.log(longestWord);
+
+function isNumberInRange(number, min, max) {
+    return number >= min && number <= max;
+}
+
+console.log(isNumberInRange(10, 5, 15));
+console.log(isNumberInRange(20, 5, 15));
+
+function findSmallestNumber(numbers) {
+    let smallestNumber = numbers[0];
+
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] < smallestNumber) {
+            smallestNumber = numbers[i];
+        }
+    }
+
+    return smallestNumber;
+}
+
+console.log(findSmallestNumber([10, 5, 8, 3, 15]));
+
+function convertToCamelCase(text) {
+    let words = text.split(' ');
+
+    for (let i = 1; i < words.length; i++) {
+        words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+    }
+
+    return words.join('');
+}
+
+console.log(convertToCamelCase('hello world'));
+
+function isPrime(number) {
+    if (number <= 1) {
+        return false;
+    }
+
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+console.log(isPrime(17));
+console.log(isPrime(10));
+
+function countCharacters(text) {
+    let characterCount = {};
+
+    for (let i = 0; i < text.length; i++) {
+        let character = text[i];
+
+        if (characterCount[character]) {
+            characterCount[character]++;
+        } else {
+            characterCount[character] = 1;
+        }
+    }
+
+    return characterCount;
+}
+
+console.log(countCharacters('hello'));
