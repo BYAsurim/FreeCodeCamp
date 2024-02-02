@@ -13,12 +13,6 @@ function countVowels(str) {
 
 console.log(countVowels('Hello World'));
 
-function isPalindrome(str) {
-    const reversedStr = str.split('').reverse().join('');
-    return str === reversedStr;
-}
-
-console.log(isPalindrome('racecar'));
 
 function sumArray(arr) {
     return arr.reduce((acc, curr) => acc + curr, 0);
@@ -40,21 +34,6 @@ function reverseWords(str) {
 
 console.log(reverseWords('Hello World'));
 
-function isPrime(number) {
-    if (number <= 1) {
-        return false;
-    }
-
-    for (let i = 2; i <= Math.sqrt(number); i++) {
-        if (number % i === 0) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
-console.log(isPrime(7));
 
 function removeDuplicates(arr) {
     return [...new Set(arr)];
@@ -112,28 +91,7 @@ function calculateSum(array) {
 
 console.log(calculateSum([1, 2, 3, 4, 5]));
 
-function isPalindrome(str) {
-    const reversed = str.split('').reverse().join('');
-    return str === reversed;
-}
 
-console.log(isPalindrome('racecar'));
-console.log(isPalindrome('hello'));
-
-function factorial(number) {
-    if (number === 0 || number === 1) {
-        return 1;
-    }
-
-    let result = 1;
-    for (let i = 2; i <= number; i++) {
-        result *= i;
-    }
-
-    return result;
-}
-
-console.log(factorial(5));
 
 let numbers = [1, 2, 3, 4, 5];
 let sum = 0;
@@ -144,16 +102,6 @@ for (let i = 0; i < numbers.length; i++) {
 
 console.log(sum);
 
-let numbers = [10, 5, 8, 3, 15];
-let maxNumber = numbers[0];
-
-for (let i = 1; i < numbers.length; i++) {
-    if (numbers[i] > maxNumber) {
-        maxNumber = numbers[i];
-    }
-}
-
-console.log(maxNumber);
 
 let fruits = ['apple', 'banana', 'orange', 'grape'];
 let searchItem = 'orange';
@@ -177,70 +125,6 @@ for (let i = str.length - 1; i >= 0; i--) {
 
 console.log(reversedStr);
 
-let str = 'JavaScript is awesome';
-let vowelCount = 0;
-let vowels = ['a', 'e', 'i', 'o', 'u'];
-
-str = str.toLowerCase();
-
-for (let i = 0; i < str.length; i++) {
-    if (vowels.includes(str[i])) {
-        vowelCount++;
-    }
-}
-
-console.log(vowelCount);
-
-let numbers = [1, 2, 3, 4, 5, 1, 2, 3];
-let uniqueValues = [];
-
-for (let i = 0; i < numbers.length; i++) {
-    if (!uniqueValues.includes(numbers[i])) {
-        uniqueValues.push(numbers[i]);
-    }
-}
-
-console.log(uniqueValues);
-
-let numbers = [1, 2, 3, 4, 5];
-let sum = 0;
-
-for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-}
-
-let average = sum / numbers.length;
-
-console.log(average);
-
-let str = 'level';
-let reversedStr = '';
-
-for (let i = str.length - 1; i >= 0; i--) {
-    reversedStr += str[i];
-}
-
-let isPalindrome = str === reversedStr;
-
-console.log(isPalindrome);
-
-let sentence = 'JavaScript is a programming language';
-let words = sentence.split(' ');
-let wordCount = words.length;
-
-console.log(wordCount);
-
-let sentence = 'JavaScript is an amazing programming language';
-let words = sentence.split(' ');
-let longestWord = '';
-
-for (let i = 0; i < words.length; i++) {
-    if (words[i].length > longestWord.length) {
-        longestWord = words[i];
-    }
-}
-
-console.log(longestWord);
 
 function isNumberInRange(number, min, max) {
     return number >= min && number <= max;
@@ -309,3 +193,38 @@ function countCharacters(text) {
 }
 
 console.log(countCharacters('hello'));
+
+function findLargestSum(numbers) {
+    let Sum = 0
+
+    for (let i = 0; i< numbers.length; i++){
+        debugger
+        Sum += numbers[i]
+    }
+        return Sum
+}
+
+console.log('hey')
+console.log(findLargestSum([1, -2, 3, 10, -4, 7, 2, -5]));
+
+function isPalindrome(word) {
+    let reversedWord = word.split('').reverse().join('');
+    return word === reversedWord;
+}
+
+console.log(isPalindrome('level')); // true
+console.log(isPalindrome('hello')); // false
+
+function generateRandomPassword(length) {
+    let password = '';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+    for (let i = 0; i < length; i++) {
+        let randomIndex = Math.floor(Math.random() * characters.length);
+        password += characters[randomIndex];
+    }
+
+    return password;
+}
+
+console.log(generateRandomPassword(8));
