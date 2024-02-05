@@ -228,3 +228,40 @@ function generateRandomPassword(length) {
 }
 
 console.log(generateRandomPassword(8));
+
+function findLargestNumber(a, b, c) {
+    return Math.max(a, b, c);
+}
+
+console.log(findLargestNumber(10, 5, 8));
+
+function findLongestWord(sentence) {
+    const words = sentence.split(' ');
+    let longestWord = '';
+    for (let word of words) {
+        if (word.length > longestWord.length) {
+            longestWord = word;
+        }
+    }
+    return longestWord;
+}
+
+console.log(findLongestWord('The quick brown fox jumps over the lazy dog'));
+
+function isFactorial(number, factorial) {
+    let product = 1;
+    let i = 1;
+    while (product <= number) {
+        product *= i;
+        if (product === number) {
+            return i === factorial;
+        }
+        i++;
+    }
+    return false;
+}
+
+console.log(isFactorial(120, 5));
+console.log(isFactorial(100, 5));
+
+
