@@ -264,4 +264,53 @@ function isFactorial(number, factorial) {
 console.log(isFactorial(120, 5));
 console.log(isFactorial(100, 5));
 
+function sumArray(array) {
+    return array.reduce((sum, current) => sum + current, 0);
+  }
+  
+  const numbers1 = [1, 2, 3, 4, 5];
+  const sum1 = sumArray(numbers);
+  console.log(sum); 
 
+  function findLongestWord(str) {
+    const words = str.split(' ');
+    let longestWord = '';
+  
+    for (let i = 0; i < words.length; i++) {
+      if (words[i].length > longestWord.length) {
+        longestWord = words[i];
+      }
+    }
+  
+    return longestWord;
+  }
+  
+  const sentence = 'JavaScript is a powerful and popular programming language';
+  const longest = findLongestWord(sentence);
+  console.log(longest); 
+
+
+  function isPalindrome(str) {
+    const reversed = str.split('').reverse().join('');
+    return str === reversed;
+  }
+  
+  const word = 'level';
+  const palindrome = isPalindrome(word);
+  console.log(palindrome); 
+
+  function generateRandomPassword(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+    let password = '';
+  
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      password += characters[randomIndex];
+    }
+  
+    return password;
+  }
+  
+  const passwordLength = 8;
+  const randomPassword = generateRandomPassword(passwordLength);
+  console.log(randomPassword); 
