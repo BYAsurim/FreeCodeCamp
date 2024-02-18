@@ -265,3 +265,39 @@ console.log(isFactorial(120, 5));
 console.log(isFactorial(100, 5));
 
 
+function countVowels1(str) {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    let count = 0;
+
+    for (let char of str.toLowerCase()) {
+        if (vowels.includes(char)) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+const word = 'JavaScript';
+const vowelCount = countVowels1(word);
+console.log(vowelCount);
+function isAnagram1(str1, str2) {
+    const normalize = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const sorted1 = normalize(str1).split('').sort().join('');
+    const sorted2 = normalize(str2).split('').sort().join('');
+
+    return sorted1 === sorted2;
+}
+
+const word1 = 'listen';
+const word2 = 'silent';
+const anagram = isAnagram1(word1, word2);
+console.log(anagram);
+
+function filterUnique(array) {
+    return array.filter((value, index, self) => self.indexOf(value) === index);
+}
+
+const numbers1 = [1, 2, 3, 4, 3, 2, 1, 5];
+const uniqueNumbers = filterUnique(numbers1);
+console.log(uniqueNumbers); // Вывод: [1, 2, 3, 4, 5]
