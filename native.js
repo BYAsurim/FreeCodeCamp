@@ -264,4 +264,33 @@ function isFactorial(number, factorial) {
 console.log(isFactorial(120, 5));
 console.log(isFactorial(100, 5));
 
+function getUnique(arr) {
+    return [...new Set(arr)];
+}
 
+console.log(getUnique([1, 2, 3, 2, 4, 1, 5]));
+
+function convertVowels(str) {
+    return str.replace(/[aeiou]/gi, (vowel) => vowel.toUpperCase());
+}
+console.log(convertVowels("javascript is awesome"));
+
+function sortByAge(persons) {
+    return persons.sort((a, b) => b.age - a.age);
+}
+
+
+const people = [
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 30 },
+    { name: "Charlie", age: 20 },
+    { name: "David", age: 35 },
+];
+console.log(sortByAge(people));
+
+function reverseNumber(num) {
+    return Number(num.toString().split("").reverse().join(""));
+}
+
+console.log(reverseNumber(12345));
+console.log(reverseNumber(98.76));
