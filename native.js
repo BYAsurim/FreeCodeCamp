@@ -294,3 +294,15 @@ function reverseNumber(num) {
 
 console.log(reverseNumber(12345));
 console.log(reverseNumber(98.76));
+
+
+function foo(){
+    const sum = Array.from(arguments)
+    return  sum.reduce((acc, value)=>{
+       return  acc + value
+    })
+
+}
+console.log(foo(1,2,3,4,5))
+console.log(foo(1,2,3))
+
